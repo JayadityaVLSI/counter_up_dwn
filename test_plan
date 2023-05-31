@@ -1,0 +1,20 @@
+TEST 1:
+	Assert reset at 0 ns and deassert after 2 clock cycles.
+	Count from 0x0h to 0xfh
+	Check whether max count reached after 16 clock cycles
+	Check whether counter rolls back to 0x0 at next clock cycle.
+TEST 2:
+	Assert reset in middle of count
+	Check whether count becomes 0x0h
+TEST 3:
+	Assert reset and deassert reset
+	Down count from 0xFh to 0x0h
+   	Check whether min count reached after 16 clock cycles
+	Check whether counter rolls back to 0xFh at next clock cycle
+TEST 4: 
+	Assert reset and deassert reset
+	Up count till (current_count + random value) 
+	Check whether count has reached (current_count + random value) 
+	Down count till (current_count - random value) 
+	Check whether count has reached (current_count - random value) 
+	Repeat up and down counting for few times
